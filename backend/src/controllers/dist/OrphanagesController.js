@@ -41,7 +41,7 @@ var Yup = require("yup");
 var Orphanages_view_1 = require("../view/Orphanages_view");
 var Orphanage_1 = require("../models/Orphanage");
 exports["default"] = {
-    index: function (request, response) {
+    list: function (request, response) {
         return __awaiter(this, void 0, void 0, function () {
             var orphanagesRepository, orphanages;
             return __generator(this, function (_a) {

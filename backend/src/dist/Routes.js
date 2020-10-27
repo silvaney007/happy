@@ -1,0 +1,12 @@
+"use strict";
+exports.__esModule = true;
+var express_1 = require("express");
+var multer_1 = require("multer");
+var UpLoad_1 = require("./confg/UpLoad");
+var OrphanagesController_1 = require("./controllers/OrphanagesController");
+var routes = express_1.Router();
+var upload = multer_1["default"](UpLoad_1["default"]);
+routes.get('/orphanages', OrphanagesController_1["default"].list);
+routes.get('/orphanages/:id', OrphanagesController_1["default"].show);
+routes.post('/orphanages', upload.array('images'), OrphanagesController_1["default"].create);
+exports["default"] = routes;
