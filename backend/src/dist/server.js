@@ -1,0 +1,11 @@
+"use strict";
+exports.__esModule = true;
+var express_1 = require("express");
+var path_1 = require("path");
+require("./database/connection");
+var Routes_1 = require("./Routes");
+var app = express_1["default"]();
+app.use(express_1["default"].json());
+app.use(Routes_1["default"]);
+app.use('/uploads', express_1["default"].static(path_1["default"].join(__dirname, '..', 'uploads')));
+app.listen(3333);
