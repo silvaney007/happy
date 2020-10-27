@@ -54,21 +54,21 @@ export default {
       about,
       instructions,
       opening_hours,
-      open_on_weekends: open_on_weekends === 'true',
+      open_on_weekends,
       images
     };
 
     const schema = Yup.object().shape({
-      name: Yup.string().required('Nome obrigatório.'),
-      latitude: Yup.number().required('Latitude obrigatório.'),
-      longitude: Yup.number().required('Longitude obrigatório.'),
-      about: Yup.string().required('Informações sobre o orfanato obrigatório.').max(300),
-      instructions: Yup.string().required('Instruções de visitação obrigatório.'),
-      opening_hours: Yup.string().required('Horas aberto obrigatório.'),
-      open_on_weekends: Yup.boolean().required('Aberto aos fins de semana obrigatório.'),
+      name: Yup.string().required(),
+      latitude: Yup.number().required(),
+      longitude: Yup.number().required(),
+      about: Yup.string().required().max(300),
+      instructions: Yup.string().required(),
+      opening_hours: Yup.string().required(),
+      open_on_weekends: Yup.boolean().required(),
       images: Yup.array(
         Yup.object().shape({
-          path: Yup.string().required('Url da imagem obrigatório.')
+          path: Yup.string().required()
       }))
     });
 
